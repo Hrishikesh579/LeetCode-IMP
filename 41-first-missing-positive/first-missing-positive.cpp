@@ -1,17 +1,31 @@
 class Solution {
 public:
     int firstMissingPositive(vector<int>& nums) {
-        sort(nums.begin(), nums.end());
+        // Cheating!!!!!
+        // sort(nums.begin(), nums.end());
+        // int n = nums.size();
+        // int checker = 0, i = 0;
+        // bool isSame = false;
+        // while(i < n){
+        //     if(nums[i] <= checker) i++;
+        //     else{
+        //         if(nums[i] != checker + 1) return checker + 1;
+        //         checker++;
+        //     }
+        // }
+        // return checker + 1;
         int n = nums.size();
-        int checker = 0, i = 0;
-        bool isSame = false;
-        while(i < n){
-            if(nums[i] <= checker) i++;
-            else{
-                if(nums[i] != checker + 1) return checker + 1;
-                checker++;
+        int i = 0;
+        while (i < n) {
+            if(nums[i] > 0 && nums[i] <= n){
+                while(((nums[i] == i+1) || (nums[i] > 0 && nums[i] <= n)) && nums[i] != nums[nums[i] - 1]) swap(nums[i], nums[nums[i] - 1]);
             }
+            i++;
         }
-        return checker + 1;
+        for (int i = 0; i < n; i++) {
+            if (nums[i] != i + 1)
+                return i + 1;
+        }
+        return i + 1;
     }
 };
