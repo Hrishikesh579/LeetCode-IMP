@@ -1,1 +1,1 @@
-<h2>minimum-add-to-make-parentheses-valid Notes</h2><hr>[ Time taken: 1hr 27m 16s ]
+<h2>minimum-add-to-make-parentheses-valid Notes</h2><hr>[ Time taken: 7s ]
